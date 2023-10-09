@@ -1,0 +1,2 @@
+telebot==3.8
+paramiko==2.7.2
